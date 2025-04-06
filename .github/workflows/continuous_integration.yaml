@@ -1,4 +1,4 @@
-name: Continuous Integration FIAP
+name: Continuous Integration Java
 
 on:
   pull_request:
@@ -7,16 +7,16 @@ on:
 
 jobs:
     build:
-      runs-on: ubuntu-latest
-      steps:
-      - name: Git Checkout
-        uses: actions/checkout@v4
+        runs-on: ubuntu-latest
+        steps:
+        -  name: Git Checkout
+           uses: actions/checkout@v4
 
-      - name: Setup Java SDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '21'
+        -   name: Setup Java SDK
+            uses: actions/setup-java@v4
+            with:
+              distribution: 'temurin'
+              version: '21'
 
-      - name: Unit Tests
-        run: mvn test
+        -   name: Unit Tests
+            run: mvn test
