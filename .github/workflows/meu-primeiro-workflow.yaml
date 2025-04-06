@@ -1,4 +1,4 @@
-name: Meu primeiro workflow
+name: 01 - Meu primeiro workflow
 on: push
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     job2-goodbye:
         runs-on: ubuntu-latest
         steps:
-        - name: Step 1 - Sequencia de instruções
+        - name: Step 1 - Sequência de instruções
           run: |
             echo "Uma nova instrução"
             ls            
