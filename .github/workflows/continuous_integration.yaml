@@ -1,22 +1,20 @@
-name: Continuous Integration Java
-
+name: Continuous Integration
 on:
-  pull_request:
-    branches:
-      - develop
-
+    pull_request:
+        types: [opened, reopened]
+        branches: "feature/**"
 jobs:
-    build:
+    tests:
         runs-on: ubuntu-latest
-        steps:
-        -  name: Git Checkout
-           uses: actions/checkout@v4
-
-        -   name: Setup Java SDK
-            uses: actions/setup-java@v4
-            with:
-              distribution: 'temurin'
-              version: '21'
-
-        -   name: Unit Tests
+        steps:             
+        -  
+            name: Git Checkout 
+            uses: actions/checkout@v4 
+ 
+        -   name: Setup Java SDK 
+            uses: actions/setup-java@v4 
+            with: 
+              distribution: 'temurin'  
+              java-version: '21' 
+        -   name: Unit tests
             run: mvn test
